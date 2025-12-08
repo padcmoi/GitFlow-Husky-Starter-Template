@@ -1,0 +1,28 @@
+{
+  "name": "gitflow-husky-starter-template",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint --fix . --ext .ts",
+    "format": "prettier --write src scripts public",
+    "git:log": "git log --oneline --decorate --graph --all",
+    "prepare": "cp -R node_modules/@padcmoi/gitflow-husky-custom-hooks/. .husky/ 2>/dev/null && sh .husky/husky-install.sh && git push"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@eslint/js": "^9.39.1",
+    "@padcmoi/gitflow-husky-custom-hooks": "github:padcmoi/GitFlow-Husky-Custom-Hooks#main",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.7.4"
+  },
+  "lint-staged": {
+    "*.{ts,js,json}": "eslint --fix"
+  }
+}

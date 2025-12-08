@@ -1,0 +1,6 @@
+CHANGELOG.md merge=ours -diff
+
+# Never diff these files
+.husky/meta/* -diff
+
+meta/* -diff
